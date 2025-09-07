@@ -15,14 +15,16 @@ body{
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--color-bg);
   transition: 0.4s;
-  padding: 3px;
+  padding: 5px;
+
+  border-radius: 0.5rem;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: var(--color-accent);
   }
 }
 
@@ -47,12 +49,23 @@ header {
   /* width: 100%; */
   z-index: 9999;
 
-  background-color: #333;
+  background-color: var(--color-heading);
   color: white;
   padding: 1rem;
   text-align: center;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+footer{
+  background-color: var(--color-heading);
+  color: var(--color-bg);
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }

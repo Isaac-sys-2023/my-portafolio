@@ -28,7 +28,6 @@ import DarkModeToggle from './DarkModeToggle.vue';
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
   padding: 0;
   margin: 0;
 }
