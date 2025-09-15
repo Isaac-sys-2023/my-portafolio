@@ -7,6 +7,8 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
 
 <template>
   <header>
+    <h1 class="header-title">Isaac.dev</h1>
+
     <ul class="nav-links">
       <li>
         <RouterLink to="/">Home</RouterLink>
@@ -24,6 +26,10 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
 </template>
 
 <style scoped>
+.header-title {
+  color: var(--color-bg);
+}
+
 .nav-links {
   list-style: none;
   display: flex;
