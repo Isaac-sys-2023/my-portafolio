@@ -23,6 +23,14 @@ const router = createRouter({
       component: () => import('../views/ProjectsView.vue'),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition; // al usar botón atrás/adelante
+    } else {
+      return { top: 0 }; // navegación normal
+    }
+  }
+
 })
 
 export default router
