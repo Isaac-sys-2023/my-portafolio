@@ -53,6 +53,7 @@
 :root {
   /* Light mode */
   --color-bg: #f6f3f9;        /* fondo suave lila */
+  --color-bg-hover: #dcdce4;
   --color-text: #2a0735;      /* casi negro con tinte morado */
   --color-primary: #7c3aed;   /* morado principal */
   --color-secondary: #a78bfa; /* lila claro */
@@ -63,6 +64,7 @@
 
 [data-theme="dark"] {
   --color-bg: #1a1625;        /* fondo oscuro con tinte púrpura */
+  --color-bg-hover: #0c0b11;
   --color-text: #e9d5ff;      /* texto lila suave */
   --color-primary: #a78bfa;   /* morado más claro en dark */
   --color-secondary: #7c3aed; /* inversión del esquema */
