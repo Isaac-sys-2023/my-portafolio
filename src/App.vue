@@ -20,9 +20,13 @@ import Footer from './components/layout/Footer.vue'
   </header>
 
   <RouterView /> -->
-  <Header />
-  <RouterView />
-  <Footer />
+  <div class="app-container">
+    <Header />
+    <main class="main-content">
+      <RouterView />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
@@ -87,4 +91,17 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 } */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* hace que ocupe toda la altura de la ventana */
+}
+
+.main-content {
+  flex: 1;
+  /* ocupa el espacio disponible */
+  /* opcional: añade padding si quieres separación con el footer */
+}
 </style>
