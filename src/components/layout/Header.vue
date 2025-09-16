@@ -28,6 +28,8 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
 <style scoped>
 .header-title {
   color: var(--color-bg);
+  width: 3rem;
+  overflow: visible;
 }
 
 .nav-links {
