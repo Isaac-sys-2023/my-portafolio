@@ -8,6 +8,7 @@ const props = defineProps<{
     link: string
     pageLink?: string
     lastUpdate: string
+    types: string[]
 }>()
 </script>
 
@@ -24,6 +25,9 @@ const props = defineProps<{
                 <img class="tech-icon" :src="tech.imageUrl" :alt="tech.name">
             </li>
         </ul>
+        <div class="project-types">
+            <h3 class="project-type" v-for="type in types ?? []" :key="type">{{ type }}</h3>
+        </div>
     </div>
 </template>
 
@@ -34,6 +38,8 @@ const props = defineProps<{
 
     margin: 0.5rem;
     padding: 0.5rem;
+
+    transition: all 0.3s ease;
 }
 
 .project-title {
@@ -45,8 +51,13 @@ const props = defineProps<{
 .project-title:hover,
 .project-page-link:hover {
     text-decoration: underline;
-    background-color: var(--color-bg);
     color: var(--color-heading);
+}
+
+.project-title:hover,
+.project-page-link:hover,
+.project-container:hover {
+    background-color: var(--color-bg-hover);
 }
 
 .project-page-link {
@@ -58,11 +69,41 @@ const props = defineProps<{
     display: flex;
     justify-content: flex-start;
     padding: 0;
-    margin: 0;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
 }
 
 .tech-icon {
     width: 3rem;
     height: 3rem;
+
+    transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+    transform: scale(1.25);
+}
+
+.project-types {
+    display: flex;
+    flex-direction: row;
+}
+
+.project-type {
+    background-color: var(--color-heading);
+    color: var(--color-bg);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-right: 0.25rem;
+
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.project-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 </style>
