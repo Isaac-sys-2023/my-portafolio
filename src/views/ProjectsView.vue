@@ -39,15 +39,88 @@ const myProjects = ref([
         types: ["Backend"],
     }
 ]);
+
+const actualParam = ref("all");
+
+let filteredProject = ref(myProjects.value);
+
+const filterProject = (paramFilter: string) => {
+    actualParam.value = paramFilter;
+
+    if (paramFilter === 'all' || paramFilter === '') {
+        filteredProject.value = myProjects.value;
+        return;
+    }
+    filteredProject.value = myProjects.value.filter(f => f.types.includes(paramFilter));
+}
+
 </script>
 
 <template>
-    <div class="projects">
-        <h1>My proyects ({{ myProjects.length }}):</h1>
-        <div>
-            <Project v-for="project in myProjects" v-bind="project" />
+    <div class="projects-items-container">
+        <h1>My proyects</h1>
+        <div class="filter-buttons">
+            <button :class="['filter-button', { selected: actualParam === 'all' }]" @click="filterProject('all')">All
+                ({{ myProjects.length }})</button>
+            <button :class="['filter-button', { selected: actualParam === 'Frontend' }]"
+                @click="filterProject('Frontend')">Frontend ({{myProjects.filter(f =>
+                    f.types.includes('Frontend')).length}})</button>
+            <button :class="['filter-button', { selected: actualParam === 'Backend' }]"
+                @click="filterProject('Backend')">Backend ({{myProjects.filter(f => f.types.includes('Backend')).length
+                }})</button>
+            <button :class="['filter-button', { selected: actualParam === 'Mobile' }]"
+                @click="filterProject('Mobile')">Mobile ({{myProjects.filter(f => f.types.includes('Mobile')).length
+                }})</button>
+
         </div>
+        <div class="projects-items" v-if="filteredProject.length > 0">
+            <Project class="project-item" v-for="project in filteredProject" :key="project.title" v-bind="project" />
+        </div>
+        <p v-else>No hay proyectos disponibles</p>
     </div>
 </template>
 
-<style></style>
+<style>
+.projects-items-container {
+    padding: 1rem;
+}
+
+.projects-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-items,
+.project-item {
+    width: 100%;
+    /* o max-width, si quieres limitarlo */
+}
+
+.filter-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-button {
+    width: 7rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 0.2rem solid var(--color-heading);
+    border-radius: 0.45rem;
+    background-color: var(--color-heading);
+
+    transition: all 0.3s ease;
+    color: var(--color-bg);
+    font-size: 1rem;
+}
+
+.filter-button:hover,
+.filter-button.selected {
+    transform: scale(1.05);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+</style>

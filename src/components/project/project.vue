@@ -33,13 +33,17 @@ const props = defineProps<{
 
 <style scoped>
 .project-container {
-    border: 0.2rem solid var(--color-heading);
+    outline: 0.2rem solid var(--color-heading);
     border-radius: 1rem;
 
     margin: 0.5rem;
     padding: 0.5rem;
 
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+}
+
+.project-container:hover {
+    outline: 0.4rem solid var(--color-heading)
 }
 
 .project-title {
