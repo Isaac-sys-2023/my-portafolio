@@ -51,8 +51,8 @@ header {
 
   background-color: var(--color-heading);
   color: white;
-  padding: 1rem;
-  text-align: center;
+  padding: 1rem 2rem;
+  /* text-align: center; */
 
   display: flex;
   justify-content: space-between;

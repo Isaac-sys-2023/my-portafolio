@@ -10,13 +10,13 @@ const year = today.getFullYear();
 <template>
   <footer>
     <div class="net-icons">
-      <a href="">
+      <a href="https://github.com/Isaac-sys-2023" target="_blank" rel="noopener noreferrer">
         <github />
       </a>
-      <a href="">
+      <a href="https://www.linkedin.com/in/isaac-gutierrez-huarachi/" target="_blank" rel="noopener noreferrer">
         <linkedin />
       </a>
-      <a href="">
+      <a href="mailto:gutierrezhuarachiisaac@gmail.com">
         <email />
       </a>
     </div>

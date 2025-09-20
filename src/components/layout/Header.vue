@@ -7,7 +7,9 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
 
 <template>
   <header>
-    <h1 class="header-title">Isaac.dev</h1>
+    <div class="left">
+      <h1 class="header-title">Isaac.dev</h1>
+    </div>
 
     <ul class="nav-links">
       <li>
@@ -19,9 +21,14 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
       <li>
         <RouterLink to="/projects">Projects</RouterLink>
       </li>
+      <li>
+        <RouterLink to="/contact">Contact</RouterLink>
+      </li>
     </ul>
 
-    <DarkModeToggle />
+    <div class="right">
+      <DarkModeToggle />
+    </div>
   </header>
 </template>
 
@@ -30,6 +37,7 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
   color: var(--color-bg);
   width: 3rem;
   overflow: visible;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -38,5 +46,6 @@ import DarkModeToggle from '../toggle/DarkModeToggle.vue';
   justify-content: center;
   padding: 0;
   margin: 0;
+  gap: 1rem;
 }
 </style>
