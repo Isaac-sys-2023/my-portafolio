@@ -108,7 +108,8 @@ const filterProject = (paramFilter: string) => {
     width: 7rem;
     padding: 0.5rem;
     margin: 0.5rem;
-    border: 0.2rem solid var(--color-heading);
+    /* border: 0.2rem solid var(--color-heading); */
+    outline: 0.15rem solid var(--color-heading);
     border-radius: 0.45rem;
     background-color: var(--color-heading);
 

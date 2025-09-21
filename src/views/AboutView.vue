@@ -25,8 +25,14 @@
     <br>
     <p>He trabajado tambien en la DTIC en la Universidad Mayor de San Simon por 4 meses como parte de mi practica
       empresarial</p>
-
   </div>
+
+  <div>
+    <h2>Certificaciones</h2>
+    <!-- No tengo certificaciones aun, o eso creo, asi que estara pendiente -->
+  </div>
+
+
 </template>
 
 <style>
